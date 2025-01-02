@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Example</title>
+    <script type="application/javascript">
+        function helloWorld(event) {
+            console.log(event);
+            alert("Hello World!");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.querySelector("button");
+            button.addEventListener("click", helloWorld);
+        });
+    </script>
+</head>
+<body>
+    <button>Hello World</button>
+</body>
+</html>
