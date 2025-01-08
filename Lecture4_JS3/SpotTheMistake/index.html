@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wizard's Spellbook</title>
+</head>
+<body>
+    <h1>Wizard's Spellbook</h1>
+    <div id="spellbook">
+        <p id="spell">Lumos</p>
+    </div>
+    <button onclick="castSpell()">Cast Spell!</button>
+
+    <script>
+        function castSpell() {
+            const spell = document.querySelector("spell");
+            alert("Casting spell: " + spell.textContent);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You Are</title>
+    <script>
+        // Extract URL parameters and display the name
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const fname = params.get("fname") || "Guest";
+            const lname = params.get("lname") || "User";
+
+            const h1 = document.createElement("h1");
+            h1.textContent = `You are ${fname} ${lname}`;
+            document.body.appendChild(h1);
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
