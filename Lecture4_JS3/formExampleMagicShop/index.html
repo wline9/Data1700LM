@@ -3,53 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Magic Shop Order Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input, select, textarea, button {
-            margin-top: 5px;
-            display: block;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Magic Shop Repair Form</h1>
+<h1>Magic Shop Repair Form</h1>
 
-    <form id="order-form">
-        <label for="customer-name">Customer Name</label>
-        <input type="text" id="customer-name" name="customer-name" required>
+<form id="order-form">
+    <label for="customer-name">Customer Name</label>
+    <input type="text" id="customer-name" name="customer-name" required>
 
-        <label for="item">Select Item</label>
-        <select id="item" name="item" required>
-            <option value="Wand">Wand</option>
-            <option value="Cauldron">Cauldron</option>
-            <option value="Cloak">Cloak</option>
-            <option value="Spell Scroll">Spell Scroll</option>
-            <option value="Ring">Ring </option>
-        </select>
+    <label for="item">Select Item</label>
+    <select id="item" name="item" required>
+        <option value="Wand">Wand</option>
+        <option value="Cauldron">Cauldron</option>
+        <option value="Cloak">Cloak</option>
+        <option value="Spell Scroll">Spell Scroll</option>
+        <option value="Ring">Ring</option>
+    </select>
 
-        <label>
-            <input type="checkbox" id="curse-removal" name="additional-services" value="Curse Removal"> Curse Removal (Max Strength: 10)
-        </label>
+    <label>Job Type</label>
+    <div id="job-type" class="radio-group">
+        <input type="radio" id="curse-removal" name="job-type" value="de-curse">
+        <label for="curse-removal">Curse Removal</label>
 
-        <label for="curse-strength" id="curse-strength-label" style="display: none;">Curse Strength</label>
-        <input type="range" id="curse-strength" name="curse-strength" min="1" max="10" style="display: none;">
+        <input type="radio" id="enhance" name="job-type" value="enhance">
+        <label for="enhance">Enhance</label>
 
-        <label for="special-instructions">Special Instructions</label>
-        <textarea id="special-instructions" name="special-instructions" rows="4" ></textarea>
+        <input type="radio" id="clean" name="job-type" value="clean">
+        <label for="clean">Clean</label>
+    </div>
 
-        <button type="submit">Submit Order</button>
-    </form>
+    <div id="curse-strength-container" class="hidden">
+        <label for="curse-strength" id="curse-strength-label">Curse Strength</label>
+        <input type="range" id="curse-strength" name="curse-strength" min="1" max="10">
+    </div>
+
+    <label for="special-instructions">Special Instructions</label>
+    <textarea id="special-instructions" name="special-instructions" rows="4"></textarea>
+
+    <button type="submit">Submit Order</button>
+</form>
 </body>
 </html>

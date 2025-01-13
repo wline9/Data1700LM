@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () =>{
-    document.getElementById('curse-removal').addEventListener('change', function () {
-        const curseStrength = document.getElementById('curse-strength');
-        const curseLabel = document.getElementById('curse-strength-label');
-        if (this.checked) {
-            curseStrength.style.display = 'block';
-            curseLabel.style.display = 'block';
+    document.getElementById('job-type').addEventListener('change', function () {
+        const curseStrength = document.getElementById('curse-strength-container');
+        const curseCheckBox = document.getElementById('curse-removal');
+        if (curseCheckBox.checked) {
+            curseStrength.classList.remove("hidden");
         } else {
-            curseStrength.style.display = 'none';
-            curseLabel.style.display = 'none';
+            curseStrength.classList.add("hidden");
         }
     });
 
@@ -22,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
             // Reset the form
             event.target.reset();
-            document.getElementById('curse-strength').style.display = 'none';
-            document.getElementById('curse-strength-label').style.display = 'none';
+            document.getElementById('curse-strength-container').classList.add("hidden");
         });
 })
