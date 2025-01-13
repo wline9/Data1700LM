@@ -1,0 +1,53 @@
+<script>
+class Rectangle {
+    #width;
+    #height;
+
+    constructor(width, height) {
+        this.#width = width;
+        this.#height = height;
+    }
+
+    get width() {
+        return this.#width;
+    }
+
+    set width(value) {
+        if (value > 0) {
+            this.#width = value;
+        } else {
+            console.log('Width must be positive.');
+        }
+    }
+
+    get height() {
+        return this.#height;
+    }
+
+    set height(value) {
+        if (value > 0) {
+            this.#height = value;
+        } else {
+            console.log('Height must be positive.');
+        }
+    }
+
+    get area() {
+        return this.#width * this.#height;
+    }
+
+    set area(value) {
+        console.log('Area cannot be directly set. Use width and height properties.');
+    }
+}
+
+// Example usage:
+const rect = new Rectangle(10, 5);
+console.log(rect.area); // Output: 50
+
+rect.width = 1; // Updates the private #width field
+console.log(rect.area); // Output: 5
+
+rect.width = -1; // Output: Width must be positive.
+console.log(rect.area); // Output: 5
+</script>
