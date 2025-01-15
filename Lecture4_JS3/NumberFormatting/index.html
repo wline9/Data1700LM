@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gold dust converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<h1>Gold Dust Converter</h1>
+<p>Spells requires pure gold dust (24 carats). Enter the details below:</p>
+<form>
+    <label for="goldWeight">Enter weight of gold coins (grams):</label>
+    <input type="number" id="goldWeight" placeholder="Weight in grams...">
+
+    <label for="goldPurity">Select gold purity (carats):</label>
+    <select id="goldPurity" >
+        <option value="24" selected>24 carats (pure gold)</option>
+        <option value="22">22 carats</option>
+        <option value="18">18 carats</option>
+        <option value="14">14 carats</option>
+        <option value="12">12 carats</option>
+    </select>
+</form>
+<p id="conversionResult">Pure Gold Weight: <span id="pureGoldWeight">0</span> kg</p>
+
+</body>
+</html>
