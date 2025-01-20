@@ -8,6 +8,7 @@
       display: none !important;
     }
   </style>
+  <script src="script.js"></script>
 </head>
 <body>
   <h1>Wizard Form</h1>
@@ -16,21 +17,11 @@
       <label>Wizard Name: <input type="text" id="wizardName"></label>
       <button type="button" id="nextButton">Next</button>
     </div>
-    <div id="section2" class="hidden">
+    <div id="section2" style="display:none;">
       <label>Circle Name: <input type="text" id="circleName"></label>
       <button type="submit">Submit</button>
     </div>
   </form>
-  <script>
-    const nextButton = document.getElementById('nextButton');
-    const section1 = document.getElementById('section1');
-    const section2 = document.getElementById('section2');
 
-    nextButton.addEventListener('click', () => {
-      section1.classList.add('hidden');
-      section2.classList.remove('hidden');
-    });
-
-  </script>
 </body>
 </html>
