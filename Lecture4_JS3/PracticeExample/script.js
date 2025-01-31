@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () =>{
         if (table.querySelector('thead tr').children.length === 0) {
             const headerRow = table.querySelector('thead tr');
             Array.from(form.elements).forEach(element => {
-                if (element.name) {
+                if (element.name || element.id) {
                     const th = document.createElement('th');
-                    th.textContent = element.name;
+                    th.textContent = element.name || element.id;
                     headerRow.appendChild(th);
                 }
             });
@@ -20,12 +20,15 @@ document.addEventListener("DOMContentLoaded", () =>{
         // Create a new row for the table
         const newRow = document.createElement('tr');
         Array.from(form.elements).forEach(element => {
-            if (element.name) {
+            if (element.name || element.id) {
                 const td = document.createElement('td');
                 if (element.type === 'checkbox') {
                     td.textContent = element.checked ? 'Yes' : 'No';
                 } else if (element.type === 'radio') {
                     if (element.checked) td.textContent = element.value;
+                } else if (element.type === "select-multiple"){
+                    td.textContent = Array.from(element.selectedOptions)
+                        .map(option => option.value).join(", ");
                 } else {
                     td.textContent = element.value;
                 }
