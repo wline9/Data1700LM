@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potion Experiment Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+<h1>Potion Experiment Lab</h1>
+<p>Experiment with ingredients, stirring methods, and document your potion's effects.</p>
+
+<form id="potion-form">
+    <label for="potion-name">Potion Name</label>
+    <input type="text" id="potion-name" name="potion-name" placeholder="Enter your potion's name" required>
+
+    <!-- Add extra form elements -->
+    <!--    <label for="ingredient-1">Ingredient 1</label>-->
+    <!--    <input type="text" id="ingredient-1" name="ingredient-1" placeholder="Enter the first ingredient" required>-->
+
+    <!--    <label for="ingredient-2">Ingredient 2</label>-->
+    <!--    <input type="text" id="ingredient-2" name="ingredient-2" placeholder="Enter the second ingredient" >-->
+
+    <!--    <label for="ingredient-3">Ingredient 3</label>-->
+    <!--    <input type="text" id="ingredient-3" name="ingredient-3" placeholder="Enter the third ingredient" >-->
+
+    <label for="ingredients">Ingredients</label>
+    <select id="ingredients"  multiple>
+        <option>Phoenix feather</option>
+        <option>Eye of Newt</option>
+        <option>Unicorn Horn</option>
+        <option>Banshee Whispers</option>
+    </select>
+
+    <label for="stirring-method">Stirring method</label>
+    <div id="stirring-method">
+        <label for="clockwise">Clockwise
+            <input type="radio" id="clockwise" name="stirring-method" value="clockwise">
+        </label>
+        <label for="counterclockwise">Counterclockwise
+            <input type="radio" id="counterclockwise" name="stirring-method" value="counterclockwise">
+        </label>
+        <label for="figure-eight">Figure eight
+            <input type="radio" id="figure-eight" name="stirring-method" value="figure eight">
+        </label>
+    </div>
+
+    <label for="stirring-time">Stirring time</label>
+    <input type="number" id="stirring-time" name="stirring-time">
+
+    <label for="heating">Heating
+        <input type="checkbox" id="heating" name="heating">
+    </label>
+
+    <label for="effects">Effects and side effects</label>
+    <textarea id="effects" name="effects" rows="4"></textarea>
+
+
+    <button type="button" id="submit-button">Submit Experiment</button>
+</form>
+
+
+<h2>Registered Potions</h2>
+<table id="potion-table">
+    <thead>
+    <tr>
+        <!-- Column names will be dynamically created based on the form -->
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Rows will be added here dynamically -->
+    </tbody>
+</table>
+
+
+</body>
+</html>
