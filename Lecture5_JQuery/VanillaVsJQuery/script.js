@@ -1,10 +1,23 @@
 $(document).ready(function() {
-    $("selector").action()
     // select an element
     //jQuery
     let elementJquery = $('.my-class');
     //Native JS
     let elementJS = document.querySelector('.my-class');
+
+    // convert a DOM element
+    // jQuery to native js
+    let jqueryElement = $('.my-class');
+
+    let nativeElement = jqueryElement[0];
+    let nativeElementAlt = elementJquery.get(0);
+
+    let allNativeElements = allJqueryElements.toArray();
+
+    // from native js to jQuery
+    let elementBackToJquery = $(elementJS);
+    let allNativeJS = document.querySelectorAll('.my-class');
+    let allElementsBackToJquery = $(allNativeJS)
 
     // change element text content
     //jQuery
@@ -32,7 +45,7 @@ $(document).ready(function() {
     //jQuery
     const inputValueJQuery = $("#my-input").val();
     //Native JS
-    const inputValueJS = document.getElementById("myInput").value;
+    const inputValueJS = document.getElementById("my-input").value;
 
     // gather data from a form
     //jQuery

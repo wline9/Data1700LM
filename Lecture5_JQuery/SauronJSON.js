@@ -25,7 +25,13 @@ const SauronJSONExample = {
             Race: "Black Númenórean",
         }
     ],
+    // Function to retrieve a formatted list of aliases
+    getAliases: function () {
+        return `Sauron is also known as: ${this.Aliases.join(", ")}.`;
+    }
+
 };
 console.log(SauronJSONExample);
+console.log(SauronJSONExample.getAliases());
 console.log(JSON.stringify(SauronJSONExample));
 console.log(JSON.parse(JSON.stringify(SauronJSONExample)));
