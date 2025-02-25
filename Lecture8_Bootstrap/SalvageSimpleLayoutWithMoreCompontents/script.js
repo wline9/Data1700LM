@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemPrice = document.getElementById("itemPrice");
     const confirmPurchaseBtn = document.getElementById("confirmPurchase");
     const purchaseToast = new bootstrap.Toast(document.getElementById("purchaseToast"));
+    const modal = new bootstrap.Modal(document.getElementById("buyModal"));
 
     let selectedItem = "";
     let selectedPrice = "";
@@ -19,8 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle purchase confirmation
     confirmPurchaseBtn.addEventListener("click", function () {
-        const modal = bootstrap.Modal.getInstance(document.getElementById("buyModal"));
-        modal.hide(); // Close modal
-        purchaseToast.show(); // Show toast
+        modal.hide();
+        purchaseToast.show();
     });
 });
