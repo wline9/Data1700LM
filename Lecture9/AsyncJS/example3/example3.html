@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+
+  // Event handler for when the request completes
+  xhttp.onload = function() {
+    if (xhttp.status >= 200 && xhttp.status < 300) {
+      // Success: HTTP status codes 200-299 indicate a successful response
+      document.getElementById("demo").innerHTML = this.responseText;
+    } else {
+      // Error handling for unsuccessful HTTP status codes
+      document.getElementById("demo").innerHTML = `Error: ${xhttp.status} - ${xhttp.statusText}`;
+    }
+  };
+
+  // Event handler for network errors
+  xhttp.onerror = function() {
+    document.getElementById("demo").innerHTML = 'Network Error: Unable to reach the server.';
+  };
+
+  // Event handler for when the request is in progress
+  xhttp.onprogress = function(event) {
+    document.getElementById("demo").innerHTML = 'Loading...';
+  };
+
+  xhttp.open("GET", "./ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+</body>
+</html>

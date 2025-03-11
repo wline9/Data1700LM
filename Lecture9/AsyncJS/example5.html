@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Fetch API Example with POST Request</h2>
+<button id="postData">Send Data</button>
+
+<div id="demo">
+  <h2>Response will be displayed here</h2>
+</div>
+
+<script>
+document.getElementById('postData').addEventListener('click', function() {
+  const url = 'ajax_info.txt'; // Example URL for testing
+
+  // Hardcoded data to send in the POST request
+  const data = {
+    title: 'My Post',
+    body: 'This is the content of the post.',
+    userId: 1
+  };
+
+  // Use fetch to make the POST request
+  fetch(url, {
+    method: 'POST', // Specify the request method
+    headers: {
+      'Content-Type': 'application/json' // Indicate that the body is JSON
+    },
+    body: JSON.stringify(data) // Convert data to JSON string
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then(data => {
+    // Display the server's response
+    document.getElementById('demo').innerHTML = `
+      <h3>Response Received:</h3>
+      <pre>${JSON.stringify(data, null, 2)}</pre>
+    `;
+  })
+  .catch(error => {
+    // Handle any errors
+    document.getElementById('demo').innerHTML = `Error: ${error.message}`;
+  });
+});
+</script>
+
+</body>
+</html>

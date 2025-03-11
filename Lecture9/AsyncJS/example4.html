@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+function loadDoc() {
+  const url = 'ajax_info.txt'; // URL of the resource to fetch
+
+  // Use fetch to make the request
+  fetch(url)
+    .then(response => {
+      // Check if the response is successful
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.text(); // Parse the response as text
+    })
+    .then(data => {
+      // Display the data in the demo element
+      document.getElementById("demo").innerHTML = data;
+    })
+    .catch(error => {
+      // Handle errors, including network and HTTP errors
+      document.getElementById("demo").innerHTML = `Error: ${error.message}`;
+    });
+}
+</script>
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+</body>
+</html>

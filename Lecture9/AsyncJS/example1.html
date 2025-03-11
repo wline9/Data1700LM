@@ -1,0 +1,39 @@
+<script>
+// Function that fetches data and handles the promise internally
+async function getDataFromServer() {
+    try {
+        // Fetch data asynchronously with a promise
+        const data = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const fetchedData = { id: 1, name: "John Doe" }; // Simulated data
+                const error = false; // Simulate no error
+
+                if (error) {
+                    reject('Error: Unable to fetch data from server.');
+                } else {
+                    resolve(fetchedData); // Directly resolve with fetched data
+                }
+            }, 3000); // Simulate a delay of 3 seconds
+        });
+
+        // Call the displayData function directly after fetching data successfully
+        displayData(data);
+    } catch (error) {
+        // Call the handleError function if an error occurs
+        handleError(error);
+    }
+}
+
+// Function to display data
+function displayData(data) {
+    console.log("Received data:", data);
+}
+
+// Function to handle errors
+function handleError(error) {
+    console.error(error);
+}
+
+// Execute the data fetching and handling function
+getDataFromServer();
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Email Validation</h2>
+<form id="emailForm">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <button type="submit">Submit</button>
+    <div id="message"></div>
+</form>
+
+<script>
+document.getElementById('emailForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    const emailInput = document.getElementById('email');
+    const emailValue = emailInput.value;
+    const messageDiv = document.getElementById('message');
+    
+    // Regular expression for validating an email
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (emailPattern.test(emailValue)) {
+        messageDiv.textContent = 'Valid email address!';
+        messageDiv.className = 'success';
+    } else {
+        messageDiv.textContent = 'Please enter a valid email address.';
+        messageDiv.className = 'error';
+    }
+});
+</script>
+
+</body>
+</html>
