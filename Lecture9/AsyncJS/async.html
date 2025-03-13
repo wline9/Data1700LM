@@ -1,0 +1,20 @@
+<html>
+    <script>
+
+        function asyncFunction(callback) {
+            setTimeout(function() {
+                console.log("Process 1");
+                callback();
+            }, 2000);
+        }
+        
+        function syncFunction() {
+            console.log("Process 2");
+            console.log("Process 3");
+            console.log("Process 4");
+        }
+
+        asyncFunction(syncFunction);
+
+    </script>
+</html>
