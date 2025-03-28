@@ -1,0 +1,66 @@
+<html>
+
+<script>
+
+    // 1. Open your laptop
+    function openLaptop() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                const laptopOpened = true;
+                if (!laptopOpened) {
+                    reject("Laptop failed to open");
+                }
+                resolve("Laptop is open");
+            }, 500);
+        });
+    }
+
+    // 2. Open your IDE
+    function openIDE() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                const ideOpened = true;
+                if (!ideOpened) {
+                    reject("IDE failed to open");
+                }
+                resolve("IDE is open");
+            }, 1000);
+        });
+    }
+
+    // 3. Write the code
+    function writeCode() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function () {
+                const codeWritten = false;
+                if (!codeWritten) {
+                    reject("Code failed to write");
+                }
+                resolve("Code is written");
+            }, 2000);
+        });
+    }
+
+    async function doAssignment() {
+        try {
+            const laptopOpened = await openLaptop();
+            console.log(laptopOpened);
+
+            const ideOpened = await openIDE();
+            console.log(ideOpened);
+
+            const codeWritten = await writeCode();
+            console.log(codeWritten);
+
+            console.log("You have finished your assignment!!");
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    doAssignment();
+
+
+</script>
+
+</html>
