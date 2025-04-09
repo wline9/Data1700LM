@@ -43,13 +43,9 @@ public class EnhancementRepository {
         return jdbcTemplate.query(sql, enhancementRowMapper, id).stream().findFirst();
     }
 
-    public UUID createEnhancement(Enhancement enhancement) {
-        UUID enhancementId = UUID.randomUUID(); // Generate a new GUID
-
-        String sql = "INSERT INTO enhancements (id, name, description, type, manufacturer) VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, enhancementId.toString(), enhancement.getName(), enhancement.getDescription(), enhancement.getType(), enhancement.getManufacturer());
-
-        return enhancementId; // Return the generated GUID
+    public void createEnhancement(Enhancement enhancement) {
+        String sql = "INSERT INTO enhancements (name, description, type, manufacturer, cyborg_id) VALUES (?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, enhancement.getName(), enhancement.getDescription(), enhancement.getType(), enhancement.getManufacturer(), enhancement.getCyborgId());
     }
 
     public int updateEnhancement(Long id, Enhancement enhancement) {
