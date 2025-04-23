@@ -11,14 +11,5 @@
   <button type="submit">Submit</button>
 </form>
 
-<script>
-  document.getElementById('myForm').addEventListener('submit', function(e) {
-    const postal = document.getElementById('postal');
-    if (!postal.checkValidity()) {
-      alert('Postal code must be exactly 4 digits.');
-      e.preventDefault();
-    }
-  });
-</script>
 </body>
 </html>
