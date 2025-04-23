@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="myForm">
+  <label for="name">name:</label>
+  <input type="text" id="name" name="name" pattern="[a-zA-Z ]+" required>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById('myForm').addEventListener('submit', function(e) {
+    const postal = document.getElementById('postal');
+    if (!postal.checkValidity()) {
+      alert('Postal code must be exactly 4 digits.');
+      e.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>
