@@ -1,0 +1,4 @@
+•	@RequestMapping is a general-purpose annotation in Spring Boot that maps HTTP requests to specific handler methods. It supports multiple HTTP methods such as GET, POST, PUT, and DELETE, requiring explicit specification when handling a particular method. 
+•	In contrast, @GetMapping is a specialized annotation that simplifies the mapping of GET requests, making the code more concise and readable. 
+•	While @RequestMapping can be used at both the class and method levels, @GetMapping is only applicable at the method level. 
+•	Developers typically use @GetMapping when dealing exclusively with GET requests, whereas @RequestMapping is preferred when handling multiple HTTP methods or defining a base route at the class level.
